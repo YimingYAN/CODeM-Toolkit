@@ -3,3 +3,4 @@
 CODeM
 *.user
 .qmake.stash
+*.orig
