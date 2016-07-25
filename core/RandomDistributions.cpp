@@ -173,7 +173,7 @@ void IDistribution::calculateCDF()
     }
 
     // normalise
-    double factor = *(m_cdf.end());
+    double factor = m_cdf.back();
     if(factor == 1.0) {
         return;
     } else if(factor == 0.0) {
@@ -497,7 +497,7 @@ void MergedDistribution::addOnePDF(IDistribution* d, double ratio)
         ++first;
         ++pdfIter;
     }
-    while(newZ.back() < *last) {
+    while(newZ.back() < *(last - 1)) {
         --last;
     }
 
